@@ -15,13 +15,13 @@ def windows_sort(application, position):
     subprocess.call(["open", "-a", application])
 
     # Wait for the application to open
-    time.sleep(0.1)
+    time.sleep(0.05)
 
     # Activate the application
     activate_application_by_name(application)
 
     # Wait for the application to become active
-    time.sleep(0.1)
+    time.sleep(0.05)
 
     # Press the shortcut Command + position
     pyautogui.hotkey("command", str(position))
