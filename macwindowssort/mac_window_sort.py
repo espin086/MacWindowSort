@@ -4,7 +4,13 @@ import pyautogui
 import argparse
 
 
+def close_active_applications():
+    """Close all active applications not runing in background."""
+    subprocess.call(["osascript", "-e"])
+
+
 def activate_application_by_name(application_name):
+    """Activate an application by name."""
     script = f'tell application "{application_name}" to activate'
     subprocess.call(["osascript", "-e", script])
 
@@ -40,4 +46,5 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+    close_active_applications()
     windows_sort(args.application, args.position)
